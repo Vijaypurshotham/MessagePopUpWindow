@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(https://cdn.pixabay.com/photo/2023/11/11/10/18/mountain-8380938_1280.jpg)
+    no-repeat center center/ cover;
+  height: 100vh;
+  position: relative;
+}
+
+#open-btn {
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  width: 300px;
+  height: 90px;
+  font-size: 1.8rem;
+  background: transparent;
+  color: whitesmoke;
+  border: 2px solid whitesmoke;
+  border-radius: 8px;
+  box-shadow: 0 0 3px black;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+#open-btn:hover {
+  color: rgba(8, 0, 0, 0.92);
+  background-color: rgb(246, 239, 239);
+}
+
+#modal {
+  background-color: whitesmoke;
+  position: absolute;
+
+  /* Below it acts like a margin */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 100px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation-name: animatemodal;
+  animation-duration: 0.4s;
+}
+
+#close-btn {
+  font-size: 5rem;
+}
+
+#close-btn {
+  cursor: pointer;
+  font-size: 3rem;
+  color: rgba(255, 0, 0, 0.676);
+}
+
+/* Below we will use display none for not showing the message without the user click on the "Where's our modal button */
+#modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  /* For showing the background to dull after user clicks on the button */
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Animation Section */
+/* Below we have to use animation name which we have declared above */
+
+@keyframes animatemoda {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
